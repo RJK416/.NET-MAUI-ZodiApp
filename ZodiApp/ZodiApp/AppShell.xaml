@@ -4,12 +4,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ZodiApp"
+    xmlns:views="clr-namespace:ZodiApp.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="ZodiApp">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="MainPage1"
+        ContentTemplate="{DataTemplate NavigationPage}">
+        <NavigationPage>
+            <x:Arguments>
+                <views:MainPage1 />
+            </x:Arguments>
+        </NavigationPage>
+    </ShellContent>
+
+    <ShellContent
+        Title="DetailsPage"
+        ContentTemplate="{DataTemplate NavigationPage}">
+        <NavigationPage>
+            <x:Arguments>
+                <views:DetailsPage />
+            </x:Arguments>
+        </NavigationPage>
+    </ShellContent>
 
 </Shell>
